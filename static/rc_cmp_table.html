@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.table-container {
+  margin: 20px 0;
+  overflow-x: auto;
+}
+
+.responsive-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+}
+
+.responsive-table th,
+.responsive-table td {
+  padding: 12px 15px;
+  border: 1px solid #e0e0e0;
+  text-align: left;
+}
+
+.responsive-table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.group-header {
+  background-color: #f1f3f5;
+  font-weight: 600;
+}
+
+.highlight {
+  color: #F56B00;
+  font-weight: 600;
+}
+
+.gray-text {
+  color: #656565;
+}
+
+.bold-text {
+  font-weight: 600;
+}
+
+/* 数值列右对齐 */
+.responsive-table td:nth-child(2),
+.responsive-table td:nth-child(3),
+.responsive-table td:nth-child(4),
+.responsive-table td:nth-child(5),
+.responsive-table td:nth-child(6) {
+  text-align: right;
+}
+
+/* 悬停效果 */
+.responsive-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+</style>
+</head>
+<body>
+
+<div class="table-container">
+  <table class="responsive-table">
+    <thead>
+      <tr>
+        <th>Method</th>
+        <th>Ave.<br>Time(ms)</th>
+        <th>Max.<br>Time(ms)</th>
+        <th>Ave.<br>Accuracy</th>
+        <th>Ave.<br>Precision</th>
+        <th>Ave.<br>Recall</th>
+      </tr>
+    </thead>
+
+    <!-- Confined Planning Scenes -->
+    <tbody>
+      <tr class="group-header">
+        <td colspan="6">Confined Planning Scenes</td>
+      </tr>
+      <tr class="gray-text">
+        <td>Ground Truth</td>
+        <td>1542.207</td>
+        <td>35000.200</td>
+        <td>1.000</td>
+        <td>1.000</td>
+        <td>1.000</td>
+      </tr>
+      <tr>
+        <td>KCFRC(key)</td>
+        <td>79.518</td>
+        <td>110.698</td>
+        <td class="highlight bold-text">0.974</td>
+        <td>0.997</td>
+        <td class="highlight bold-text">0.905</td>
+      </tr>
+      <tr>
+        <td>KCFRC(conv)</td>
+        <td class="highlight bold-text">2.479</td>
+        <td class="highlight bold-text">3.844</td>
+        <td class="bold-text">0.973</td>
+        <td>0.998</td>
+        <td>0.901</td>
+      </tr>
+      <tr>
+        <td>RRT-Connect</td>
+        <td>854.594</td>
+        <td>4757.790</td>
+        <td class="highlight bold-text">0.974</td>
+        <td class="bold-text">0.999</td>
+        <td class="bold-text">0.904</td>
+      </tr>
+      <tr>
+        <td>STOMP</td>
+        <td>914.988</td>
+        <td>6091.550</td>
+        <td>0.963</td>
+        <td class="bold-text">0.999</td>
+        <td>0.861</td>
+      </tr>
+      <tr>
+        <td>FEC</td>
+        <td class="bold-text">9.898</td>
+        <td class="bold-text">19.249</td>
+        <td>0.926</td>
+        <td class="highlight bold-text">1.000</td>
+        <td>0.724</td>
+      </tr>
+    </tbody>
+
+    <!-- Dense Planning Scenes -->
+    <tbody>
+      <tr class="group-header">
+        <td colspan="6">Dense Planning Scenes</td>
+      </tr>
+      <tr class="gray-text">
+        <td>Ground Truth</td>
+        <td>966.115</td>
+        <td>8439.080</td>
+        <td>1.000</td>
+        <td>1.000</td>
+        <td>1.000</td>
+      </tr>
+      <tr>
+        <td>KCFRC(key)</td>
+        <td>90.467</td>
+        <td>250.615</td>
+        <td class="highlight bold-text">0.993</td>
+        <td class="bold-text">0.999</td>
+        <td class="highlight bold-text">0.976</td>
+      </tr>
+      <tr>
+        <td>KCFRC(conv)</td>
+        <td class="highlight bold-text">2.545</td>
+        <td class="highlight bold-text">6.305</td>
+        <td class="bold-text">0.992</td>
+        <td class="bold-text">0.999</td>
+        <td class="bold-text">0.969</td>
+      </tr>
+      <tr>
+        <td>RRT-Connect</td>
+        <td>295.193</td>
+        <td>2067.990</td>
+        <td>0.989</td>
+        <td class="bold-text">0.999</td>
+        <td>0.960</td>
+      </tr>
+      <tr>
+        <td>STOMP</td>
+        <td>372.851</td>
+        <td>2235.500</td>
+        <td>0.989</td>
+        <td class="bold-text">0.999</td>
+        <td>0.958</td>
+      </tr>
+      <tr>
+        <td>FEC</td>
+        <td class="bold-text">10.527</td>
+        <td class="bold-text">14.466</td>
+        <td>0.945</td>
+        <td class="highlight bold-text">1.000</td>
+        <td>0.788</td>
+      </tr>
+    </tbody>
+
+    <!-- Sparse Planning Scenes -->
+    <tbody>
+      <tr class="group-header">
+        <td colspan="6">Sparse Planning Scenes</td>
+      </tr>
+      <tr class="gray-text">
+        <td>Ground Truth</td>
+        <td>399.638</td>
+        <td>3175.460</td>
+        <td>1.000</td>
+        <td>1.000</td>
+        <td>1.000</td>
+      </tr>
+      <tr>
+        <td>KCFRC(key)</td>
+        <td>55.507</td>
+        <td>102.299</td>
+        <td class="bold-text">0.997</td>
+        <td class="highlight bold-text">1.000</td>
+        <td class="bold-text">0.980</td>
+      </tr>
+      <tr>
+        <td>KCFRC(conv)</td>
+        <td class="highlight bold-text">1.574</td>
+        <td class="highlight bold-text">2.947</td>
+        <td>0.996</td>
+        <td class="highlight bold-text">1.000</td>
+        <td>0.976</td>
+      </tr>
+      <tr>
+        <td>RRT-Connect</td>
+        <td>101.128</td>
+        <td>579.345</td>
+        <td>0.995</td>
+        <td class="highlight bold-text">1.000</td>
+        <td>0.971</td>
+      </tr>
+      <tr>
+        <td>STOMP</td>
+        <td>72.696</td>
+        <td>474.584</td>
+        <td class="highlight bold-text">0.998</td>
+        <td class="highlight bold-text">1.000</td>
+        <td class="highlight bold-text">0.987</td>
+      </tr>
+      <tr>
+        <td>FEC</td>
+        <td class="bold-text">5.812</td>
+        <td class="bold-text">20.517</td>
+        <td>0.983</td>
+        <td class="highlight bold-text">1.000</td>
+        <td>0.895</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
